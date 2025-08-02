@@ -1,22 +1,23 @@
+# --- 1) 基本設定 ----------------------------------------------------------
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: dark
 locale: ja-JP
 title: phalanx-hk blog
-name: phalanx-hk
 description: phalanx-hk's personal website.
-url: https://phalanx-hk.github.io
+url: "https://phalanx-hk.github.io/"
 
-# GitHub Pagesでサポートされていない機能はコメントアウト
-# enable_copy_code_button: true
-# search: true
-# search_full_content: true
+timezone: Asia/Tokyo
 
+# --- 2) プラグイン --------------------------------------------------------
+plugins:
+  - jekyll-include-cache # Minimal Mistakes 必須
+  # ※ GitHub Pages 同梱なので Gemfile には追加不要
+
+# --- 3) 著者 --------------------------------------------------------------
 author:
   name: phalanx-hk
   avatar: /assets/images/avatar.jpg
-  bio: |
-    Software Engineer.
-
+  bio: "Software Engineer."
   location: Tokyo, Japan
   links: &author_links
     - label: Website
@@ -35,16 +36,21 @@ author:
 footer:
   links: *author_links
 
-excerpt_separator: <!--more-->
+# --- 4) Markdown / 抜粋 ---------------------------------------------------
+excerpt_separator: "<!--more-->"
 kramdown:
   hard_wrap: true
-lsi: true
 
+# --- 5) コレクション ------------------------------------------------------
 collections:
   posts:
     output: true
     permalink: /:collection/:year/:month/:day/:title/
+  works: # 追加
+    output: true
+    permalink: /:collection/:name/
 
+# --- 6) デフォルト値 -------------------------------------------------------
 defaults:
   - values:
       layout: single
@@ -57,7 +63,7 @@ defaults:
       classes: no-sidebar
       show_date: true
       toc: true
-      toc_icon: scroll
+      toc_icon: list
       toc_sticky: true
       share: true
       related: true
@@ -68,30 +74,12 @@ defaults:
       classes: wide
       sidebar:
         - nav: works
-  - scope:
-      path: ""
-      type: archive
-    values:
-      classes: wide
-      sidebar:
-        - nav: archive
 
+# --- 7) その他 -------------------------------------------------------------
 paginate: 6
-timezone: Asia/Tokyo
-
 category_archive:
   type: liquid
   path: /archive/categories/
 tag_archive:
   type: liquid
   path: /archive/tags/
-
-# GitHub Pagesでサポートされていないプラグイン設定
-# target-blank:
-#   noopener: true
-#   noreferrer: true
-#   rel: nofollow
-
-# jekyll-minifier:
-#   uglifier_args:
-#     harmony: true
