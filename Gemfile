@@ -1,7 +1,6 @@
 source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
 gem "classifier-reborn", "~> 2.3"
-gem "jekyll", "~> 4.4"
-gem "minimal-mistakes-jekyll", "~> 4.27"
 gem "numo-linalg", "~> 0.1"
 gem "numo-narray", "~> 0.9"
 group :jekyll_plugins do
