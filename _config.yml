@@ -1,0 +1,95 @@
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: dark
+locale: ja-JP
+title: phalanx-hk blog
+name: phalanx-hk
+description: phalanx-hk's personal website.
+url: https://phalanx-hk.github.io
+
+enable_copy_code_button: true
+search: true
+search_full_content: true
+
+author:
+  name: phalanx-hk
+  avatar: /assets/images/avatar.jpg
+  bio: |
+    Software Engineer.
+
+  location: Tokyo, Japan
+  links: &author_links
+    - label: Website
+      icon: fas fa-fw fa-home
+      url: https://phalanx-hk.github.io
+    - label: Twitter
+      icon: fab fa-fw fa-twitter
+      url: https://twitter.com/ZFPhalanx12345
+    - label: GitHub
+      icon: fab fa-fw fa-github-alt
+      url: https://github.com/phalanx-hk
+    - label: Email
+      icon: fas fa-fw fa-envelope
+      url: mailto:zfphalanx@gmail.com
+
+footer:
+  links: *author_links
+
+excerpt_separator: <!--more-->
+kramdown:
+  hard_wrap: true
+lsi: true
+
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:year/:month/:day/:title/
+
+defaults:
+  - values:
+      layout: single
+      header:
+        teaser: /assets/images/teaser-1200x630.png
+  - scope:
+      path: ""
+      type: posts
+    values:
+      classes: no-sidebar
+      show_date: true
+      toc: true
+      toc_icon: scroll
+      toc_sticky: true
+      share: true
+      related: true
+  - scope:
+      path: ""
+      type: works
+    values:
+      classes: wide
+      sidebar:
+        - nav: works
+  - scope:
+      path: ""
+      type: archive
+    values:
+      classes: wide
+      sidebar:
+        - nav: archive
+
+paginate: 6
+timezone: Asia/Tokyo
+
+category_archive:
+  type: liquid
+  path: /archive/categories/
+tag_archive:
+  type: liquid
+  path: /archive/tags/
+
+target-blank:
+  noopener: true
+  noreferrer: true
+  rel: nofollow
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true
