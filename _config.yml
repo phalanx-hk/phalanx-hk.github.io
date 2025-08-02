@@ -6,9 +6,10 @@ name: phalanx-hk
 description: phalanx-hk's personal website.
 url: https://phalanx-hk.github.io
 
-enable_copy_code_button: true
-search: true
-search_full_content: true
+# GitHub Pagesでサポートされていない機能はコメントアウト
+# enable_copy_code_button: true
+# search: true
+# search_full_content: true
 
 author:
   name: phalanx-hk
@@ -85,11 +86,12 @@ tag_archive:
   type: liquid
   path: /archive/tags/
 
-target-blank:
-  noopener: true
-  noreferrer: true
-  rel: nofollow
+# GitHub Pagesでサポートされていないプラグイン設定
+# target-blank:
+#   noopener: true
+#   noreferrer: true
+#   rel: nofollow
 
-jekyll-minifier:
-  uglifier_args:
-    harmony: true
+# jekyll-minifier:
+#   uglifier_args:
+#     harmony: true
