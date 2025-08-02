@@ -45,9 +45,12 @@ collections:
   posts:
     output: true
     permalink: /:collection/:year/:month/:day/:title/
-  works: # 追加
+  tips:
     output: true
-    permalink: /:collection/:name/
+    permalink: /tips/:path/
+  papers:
+    output: true
+    permalink: /papers/:path/
 
 # --- 6) デフォルト値 -------------------------------------------------------
 defaults:
