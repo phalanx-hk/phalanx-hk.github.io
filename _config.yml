@@ -10,8 +10,7 @@ timezone: Asia/Tokyo
 
 # --- 2) プラグイン --------------------------------------------------------
 plugins:
-  - jekyll-include-cache # Minimal Mistakes 必須
-  # ※ GitHub Pages 同梱なので Gemfile には追加不要
+  - jekyll-include-cache
 
 # --- 3) 著者 --------------------------------------------------------------
 author:
