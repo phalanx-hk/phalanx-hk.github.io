@@ -3,3 +3,478 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
+
+// ==========================================================================
+// Theme CSS custom properties
+// ==========================================================================
+
+// Light theme values (from _variables.scss defaults)
+:root {
+  --mm-background-color: #fff;
+  --mm-text-color: #393e46;
+  --mm-primary-color: #6f777d;
+  --mm-border-color: #e6e6e6;
+  --mm-code-background-color: #fafafa;
+  --mm-code-background-color-dark: #bcc0c4;
+  --mm-form-background-color: #e6e6e6;
+  --mm-footer-background-color: #e6e6e6;
+  --mm-link-color: #2f7a9c;
+  --mm-link-color-hover: #236d8e;
+  --mm-link-color-visited: #4d8daa;
+  --mm-masthead-link-color: #6f777d;
+  --mm-masthead-link-color-hover: #53595e;
+  --mm-navicon-link-color-hover: #dbdde0;
+  --mm-muted-text-color: #616b72;
+  --mm-about-border-color: rgba(0, 0, 0, 0.1);
+  --mm-accent-color: #6f777d;
+  --mm-institution-color: #888;
+}
+
+// Dark theme values (from _dark.scss, mix() values pre-computed)
+[data-theme="dark"] {
+  --mm-background-color: #252a34;
+  --mm-text-color: #eaeaea;
+  --mm-primary-color: #00adb5;
+  --mm-border-color: #4f5564;
+  --mm-code-background-color: #1f2329;
+  --mm-code-background-color-dark: #1e2129;
+  --mm-form-background-color: #1f2329;
+  --mm-footer-background-color: #1a1d24;
+  --mm-link-color: #94c9cc;
+  --mm-link-color-hover: #afd7d9;
+  --mm-link-color-visited: #6f9799;
+  --mm-masthead-link-color: #eaeaea;
+  --mm-masthead-link-color-hover: #bbbbbb;
+  --mm-navicon-link-color-hover: #1a1d24;
+  --mm-muted-text-color: #bdbdbd;
+  --mm-about-border-color: rgba(255, 255, 255, 0.1);
+  --mm-accent-color: #00adb5;
+  --mm-institution-color: #aaa;
+}
+
+// ==========================================================================
+// Override compiled SASS colors with CSS variables
+// ==========================================================================
+
+body {
+  background-color: var(--mm-background-color) !important;
+  color: var(--mm-text-color) !important;
+}
+
+a {
+  color: var(--mm-link-color) !important;
+
+  &:hover {
+    color: var(--mm-link-color-hover) !important;
+  }
+
+  &:visited {
+    color: var(--mm-link-color-visited) !important;
+  }
+}
+
+// Masthead
+.masthead {
+  background-color: var(--mm-background-color) !important;
+  border-bottom-color: var(--mm-border-color) !important;
+}
+
+.greedy-nav {
+  background: var(--mm-background-color) !important;
+
+  a {
+    color: var(--mm-masthead-link-color) !important;
+
+    &:hover {
+      color: var(--mm-masthead-link-color-hover) !important;
+    }
+  }
+
+  .visible-links a {
+    &::before {
+      background: var(--mm-primary-color) !important;
+    }
+  }
+
+  button {
+    color: var(--mm-masthead-link-color) !important;
+  }
+}
+
+.greedy-nav__toggle {
+  &:hover {
+    color: var(--mm-navicon-link-color-hover) !important;
+  }
+
+  .navicon,
+  .navicon::before,
+  .navicon::after {
+    background: var(--mm-masthead-link-color) !important;
+  }
+}
+
+.greedy-nav .hidden-links {
+  background: var(--mm-background-color) !important;
+  border-color: var(--mm-border-color) !important;
+
+  a {
+    color: var(--mm-masthead-link-color) !important;
+  }
+}
+
+// Page
+.page__title {
+  color: var(--mm-text-color) !important;
+}
+
+.page__content {
+  color: var(--mm-text-color) !important;
+
+  h2 {
+    border-bottom-color: var(--mm-border-color) !important;
+  }
+
+  p, li, dl {
+    color: var(--mm-text-color) !important;
+  }
+}
+
+.page__meta {
+  color: var(--mm-muted-text-color) !important;
+}
+
+// Sidebar / Author
+.sidebar {
+  color: var(--mm-text-color) !important;
+}
+
+.author__name {
+  color: var(--mm-text-color) !important;
+}
+
+.author__bio {
+  color: var(--mm-text-color) !important;
+}
+
+.author__urls-wrapper {
+  button {
+    color: var(--mm-text-color) !important;
+  }
+}
+
+.author__urls.social-icons a {
+  color: var(--mm-text-color) !important;
+}
+
+// Footer
+.page__footer {
+  background-color: var(--mm-footer-background-color) !important;
+  color: var(--mm-text-color) !important;
+  border-top-color: var(--mm-border-color) !important;
+}
+
+.page__footer-follow .social-icons a {
+  color: var(--mm-text-color) !important;
+}
+
+// TOC
+.toc {
+  background-color: var(--mm-background-color) !important;
+  border-color: var(--mm-border-color) !important;
+  color: var(--mm-text-color) !important;
+
+  .nav__title {
+    background: var(--mm-primary-color) !important;
+    color: #fff !important;
+  }
+
+  a {
+    color: var(--mm-text-color) !important;
+
+    &:hover {
+      color: var(--mm-link-color) !important;
+    }
+  }
+}
+
+// Code blocks
+.highlight,
+pre,
+code {
+  background: var(--mm-code-background-color) !important;
+  color: var(--mm-text-color) !important;
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  background: var(--mm-code-background-color) !important;
+  border-color: var(--mm-border-color) !important;
+}
+
+// Notices
+.notice,
+.notice--primary,
+.notice--info,
+.notice--warning,
+.notice--success,
+.notice--danger {
+  background-color: var(--mm-code-background-color) !important;
+  color: var(--mm-text-color) !important;
+}
+
+// Pagination
+.pagination a,
+.pagination span {
+  border-color: var(--mm-border-color) !important;
+  color: var(--mm-text-color) !important;
+}
+
+// Archive
+.archive__subtitle {
+  color: var(--mm-text-color) !important;
+  border-bottom-color: var(--mm-border-color) !important;
+}
+
+.archive__item-title {
+  color: var(--mm-text-color) !important;
+}
+
+.archive__item-excerpt {
+  color: var(--mm-muted-text-color) !important;
+}
+
+// Forms
+input, textarea, select {
+  background-color: var(--mm-form-background-color) !important;
+  color: var(--mm-text-color) !important;
+  border-color: var(--mm-border-color) !important;
+}
+
+// Taxonomy (tags/categories)
+.taxonomy__section .archive__item-title a {
+  color: var(--mm-text-color) !important;
+}
+
+// Search
+.search-content .search-input {
+  background-color: var(--mm-form-background-color) !important;
+  color: var(--mm-text-color) !important;
+}
+
+// ==========================================================================
+// Theme toggle button styles
+// ==========================================================================
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.5rem;
+  align-self: center;
+}
+
+.theme-toggle__button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  color: var(--mm-masthead-link-color) !important;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--mm-border-color);
+  }
+
+  svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    fill: currentColor;
+  }
+}
+
+.theme-toggle__menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  background: var(--mm-background-color);
+  border: 1px solid var(--mm-border-color);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0;
+  margin: 0;
+  list-style: none;
+  min-width: 10rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+.theme-toggle__option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  color: var(--mm-text-color) !important;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: var(--mm-border-color);
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle__check {
+    margin-left: auto;
+    width: 0.875rem;
+    height: 0.875rem;
+    visibility: hidden;
+  }
+
+  &[aria-checked="true"] .theme-toggle__check {
+    visibility: visible;
+  }
+}
+
+// ==========================================================================
+// About page custom styles
+// ==========================================================================
+.about-grid {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  .col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--mm-about-border-color);
+  }
+
+  @media (max-width: $small) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.ul-interests {
+  padding-left: 1.25rem;
+  margin: 0;
+
+  li {
+    padding: 0;
+    margin-bottom: 0;
+  }
+}
+
+.ul-edu {
+  padding-left: 1.5em;
+
+  li {
+    margin-bottom: 1rem;
+  }
+
+  .fa-li {
+    color: var(--mm-accent-color);
+  }
+
+  .description {
+    .course {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .institution {
+      margin: 0;
+      color: var(--mm-institution-color);
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ==========================================================================
+// Experience section (YOUTRUST-style)
+// ==========================================================================
+.exp-section {
+  margin-top: 1rem;
+}
+
+.exp-company {
+  margin-bottom: 2rem;
+}
+
+.exp-company-header {
+  margin-bottom: 0.5rem;
+
+  .exp-company-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.15rem 0;
+    color: var(--mm-text-color);
+  }
+
+  .exp-company-period {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--mm-muted-text-color);
+  }
+}
+
+.exp-positions {
+  border-left: 2px solid var(--mm-accent-color);
+  padding-left: 1.25rem;
+  margin-left: 0.25rem;
+}
+
+.exp-position {
+  padding: 0.75rem 0;
+
+  & + .exp-position {
+    border-top: 1px solid var(--mm-border-color);
+  }
+
+  .exp-dept {
+    margin: 0 0 0.15rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--mm-text-color);
+  }
+
+  .exp-role {
+    margin: 0 0 0.15rem 0;
+    font-size: 0.85rem;
+    color: var(--mm-muted-text-color);
+  }
+
+  .exp-period {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+    color: var(--mm-muted-text-color);
+  }
+
+  .exp-desc {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--mm-text-color);
+    line-height: 1.6;
+  }
+}

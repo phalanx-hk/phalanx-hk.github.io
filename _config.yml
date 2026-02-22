@@ -87,7 +87,11 @@ defaults:
       sidebar:
         - nav: works
 
-# --- 7) その他 -------------------------------------------------------------
+# --- 7) スクリプト ---------------------------------------------------------
+after_footer_scripts:
+  - /assets/js/theme-toggle.js
+
+# --- 8) その他 -------------------------------------------------------------
 category_archive:
   type: liquid
   path: /archive/categories/

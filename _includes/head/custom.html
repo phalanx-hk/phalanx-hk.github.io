@@ -1,0 +1,16 @@
+<!-- start custom head snippets -->
+
+<!-- Theme: apply saved preference before first paint to prevent FOUC -->
+<script>
+(function() {
+  var saved = 'system';
+  try { saved = localStorage.getItem('theme') || 'system'; } catch(e) {}
+  var theme = saved;
+  if (saved === 'system') {
+    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+
+<!-- end custom head snippets -->
