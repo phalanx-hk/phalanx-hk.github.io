@@ -18,23 +18,26 @@ include:
 
 # --- 3) 著者 --------------------------------------------------------------
 author:
-  name: phalanx-hk
+  name: Hirotoshi Kitamura
   avatar: /assets/images/avatar.jpg
   bio: "Software Engineer."
-  location: Tokyo, Japan
+  location: Osaka, Japan
   links: &author_links
-    - label: Website
-      icon: fas fa-fw fa-home
-      url: https://phalanx-hk.github.io
     - label: Twitter
       icon: fab fa-fw fa-twitter
       url: https://twitter.com/ZFPhalanx12345
     - label: GitHub
       icon: fab fa-fw fa-github-alt
       url: https://github.com/phalanx-hk
-    - label: Email
-      icon: fas fa-fw fa-envelope
-      url: mailto:zfphalanx@gmail.com
+    - label: LinkedIn
+      icon: fab fa-fw fa-linkedin
+      url: https://www.linkedin.com/in/phalanx2021/
+    - label: Kaggle
+      icon: fab fa-fw fa-kaggle
+      url: https://www.kaggle.com/phalanx
+    - label: YOUTRUST
+      icon: fas fa-fw fa-user-circle
+      url: https://youtrust.jp/users/3e486e3b2154d87fc4a038fee3af27b0
 
 footer:
   links: *author_links
