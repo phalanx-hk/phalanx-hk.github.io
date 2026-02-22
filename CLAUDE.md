@@ -13,7 +13,7 @@ GitHub Pages でホストされている Jekyll 製の個人ブログサイト�
 bundle install
 
 # ローカル開発サーバーの起動 (http://localhost:4000)
-bundle exec jekyll serve
+bundle exec jekyll serve --livereload
 
 # サイトのビルド
 bundle exec jekyll build
