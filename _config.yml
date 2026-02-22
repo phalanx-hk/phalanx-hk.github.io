@@ -38,6 +38,9 @@ author:
     - label: YOUTRUST
       icon: fas fa-fw fa-user-circle
       url: https://youtrust.jp/users/3e486e3b2154d87fc4a038fee3af27b0
+    - label: Speaker Deck
+      icon: fab fa-fw fa-speaker-deck
+      url: https://speakerdeck.com/phalanx
 
 footer:
   links: *author_links
