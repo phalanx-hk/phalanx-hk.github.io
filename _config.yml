@@ -11,6 +11,10 @@ timezone: Asia/Tokyo
 # --- 2) プラグイン --------------------------------------------------------
 plugins:
   - jekyll-include-cache
+  - jekyll-redirect-from
+
+include:
+  - _pages
 
 # --- 3) 著者 --------------------------------------------------------------
 author:
@@ -78,7 +82,6 @@ defaults:
         - nav: works
 
 # --- 7) その他 -------------------------------------------------------------
-paginate: 6
 category_archive:
   type: liquid
   path: /archive/categories/
